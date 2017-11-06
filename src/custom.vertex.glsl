@@ -18,9 +18,7 @@ varying vec2 v_texture_coord;
 
 void main()
 {
-	float scale = 10000.0 * u_zoom + 8.0;
-
-	vec2 delta = vec2(0.00001291749338624338, 0.00001291749339316084) * scale * offset;
+	vec2 delta = vec2(0.00001291749338624338, 0.00001291749339316084) * u_zoom * offset;
 	gl_Position = u_mvp_matrix * (vec4(position, 1.0) + vec4(delta, 0.0, 0.0));
 	if(position.z > 0.0)
 	{
